@@ -194,11 +194,26 @@ main { position: relative; z-index: 1; }
   line-height: 1.05;
   letter-spacing: -.02em;
 }
+/* Gradient Text animado (estilo ReactBits) — el gradiente fluye sobre el texto.
+   Colores: #6fbfcc → #1456c2 → #2cc391. Tipografía sin cambios (hereda Outfit). */
 .grad {
-  background: linear-gradient(120deg, var(--brand), var(--brand-2), var(--gold));
+  background-image: linear-gradient(
+    90deg,
+    #6fbfcc, #1456c2, #2cc391, #1456c2, #6fbfcc
+  );
+  background-size: 300% 100%;
+  background-position: 0% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 6s linear infinite;
+}
+@keyframes gradient-flow {
+  to { background-position: 300% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .grad { animation: none; background-size: 100% 100%; }
 }
 .hero-sub {
   max-width: 560px;
