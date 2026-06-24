@@ -201,19 +201,19 @@ main { position: relative; z-index: 1; }
     90deg,
     #6fbfcc, #1456c2, #2cc391, #1456c2, #6fbfcc
   );
-  background-size: 300% 100%;
-  background-position: 0% 50%;
+  background-size: 200% auto;
+  background-position: 0 center;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  animation: gradient-flow 6s linear infinite;
+  animation: gradient-flow 4s linear infinite;
 }
 @keyframes gradient-flow {
-  to { background-position: 300% 50%; }
+  to { background-position: -200% center; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .grad { animation: none; background-size: 100% 100%; }
+  .grad { animation: none; background-size: 100% auto; }
 }
 .hero-sub {
   max-width: 560px;
