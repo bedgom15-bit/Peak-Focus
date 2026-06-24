@@ -28,6 +28,10 @@
   --maxw: 1080px;
   --radius: 18px;
   --shadow: 0 20px 50px -20px rgba(0,0,0,.55);
+
+  /* Curvas de easing (Emil Kowalski) — las nativas de CSS son demasiado débiles */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);       /* entradas, feedback */
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);   /* movimiento en pantalla */
 }
 
 [data-theme="light"] {
@@ -50,6 +54,23 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
+
+/* ===== Revelado al hacer scroll =====
+   Entrada = ease-out (arranca rápido, se siente responsiva). Nunca desde
+   scale(0): partimos de una posición visible y cercana. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity .6s var(--ease-out),
+    transform .6s var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
+}
+[data-reveal].in-view {
+  opacity: 1;
+  transform: none;
+}
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
@@ -206,8 +227,13 @@ main { position: relative; z-index: 1; }
   text-decoration: none;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: transform .2s, box-shadow .2s, background .2s;
+  transition:
+    transform .18s var(--ease-out),
+    box-shadow .2s var(--ease-out),
+    background .2s var(--ease-out);
 }
+/* Feedback de presión: instantáneo y sutil (Emil: 0.95–0.98) */
+.btn:active { transform: scale(0.97); }
 .btn-primary {
   background: linear-gradient(120deg, var(--primary), var(--accent));
   color: #fff;
@@ -258,13 +284,30 @@ blockquote {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 30px 26px;
-  transition: transform .25s, border-color .25s, box-shadow .25s;
+  /* Una sola transición cubre revelado y hover.
+     El stagger vive solo en la opacidad → el hover nunca arrastra retardo. */
+  transition:
+    opacity .55s var(--ease-out) var(--reveal-delay, 0ms),
+    transform .4s var(--ease-out),
+    border-color .2s var(--ease-out),
+    box-shadow .35s var(--ease-out);
 }
-.card:hover {
-  transform: translateY(-6px);
-  border-color: var(--brand);
-  box-shadow: var(--shadow);
+/* Hover solo en dispositivos con puntero fino (evita falsos toques en móvil) */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-6px);
+    border-color: var(--brand);
+    box-shadow: var(--shadow);
+  }
 }
+/* Feedback al presionar: la tarjeta "escucha" el toque */
+.card:active { transform: translateY(-2px) scale(0.985); }
+/* Escalonado del revelado (30–80ms entre tarjetas) */
+.cards .card:nth-child(2) { --reveal-delay: 60ms; }
+.cards .card:nth-child(3) { --reveal-delay: 120ms; }
+.cards .card:nth-child(4) { --reveal-delay: 180ms; }
+.cards .card:nth-child(5) { --reveal-delay: 240ms; }
+.cards .card:nth-child(6) { --reveal-delay: 300ms; }
 .card-icon {
   width: 52px; height: 52px;
   display: grid; place-items: center;
@@ -337,10 +380,36 @@ blockquote {
   cursor: pointer;
   font-weight: 600;
   color: var(--brand);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color .2s var(--ease-out);
 }
+.install-help summary::-webkit-details-marker { display: none; }
+/* Chevron propio que gira al abrir */
+.install-help summary::before {
+  content: "›";
+  display: inline-block;
+  font-size: 1.3rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform .25s var(--ease-in-out);
+}
+.install-help[open] summary::before { transform: rotate(90deg); }
 .install-help ol { margin: 16px 0 0 18px; color: var(--text-dim); }
 .install-help li { margin-bottom: 8px; }
 .install-help strong, .install-help em { color: var(--text); }
+
+/* Apertura elegante del contenido: entra con ease-out (solo al abrir;
+   cerrar es instantáneo, que es lo que el usuario espera). */
+.install-help[open] ol {
+  animation: disclosure .32s var(--ease-out) both;
+}
+@keyframes disclosure {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
 /* ===== Footer ===== */
 .footer {
@@ -370,4 +439,9 @@ blockquote {
 @media (prefers-reduced-motion: reduce) {
   .band-track { animation: none; }
   html { scroll-behavior: auto; }
+  /* Reducir movimiento ≠ cero: conservamos opacidad, quitamos desplazamiento */
+  [data-reveal] { transform: none; transition: opacity .3s ease; }
+  .install-help[open] ol { animation: none; }
+  .card:hover, .card:active,
+  .btn-primary:hover, .btn-ghost:hover, .btn:active { transform: none; }
 }

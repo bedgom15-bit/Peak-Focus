@@ -37,23 +37,24 @@
     alert('El APK aún no está disponible aquí. Coloca el archivo "peak-focus.apk" junto a esta página.');
   }
 
-  // Aparición suave de las tarjetas al hacer scroll
-  if ('IntersectionObserver' in window) {
+  // Revelado suave al hacer scroll (entradas con ease-out, una sola vez).
+  // El movimiento/easing/stagger vive en el CSS; aquí solo conmutamos la clase.
+  const reveals = document.querySelectorAll('[data-reveal]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    // Sin animación: mostrar todo de inmediato.
+    reveals.forEach(function (el) { el.classList.add('in-view'); });
+  } else {
     const obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'none';
-          obs.unobserve(entry.target);
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target); // se anima una vez, no en cada scroll
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
 
-    document.querySelectorAll('.card').forEach(function (card, i) {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = 'opacity .5s ease ' + (i * 0.05) + 's, transform .5s ease ' + (i * 0.05) + 's';
-      obs.observe(card);
-    });
+    reveals.forEach(function (el) { obs.observe(el); });
   }
 })();
