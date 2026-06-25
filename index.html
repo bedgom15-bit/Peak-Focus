@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -44,20 +44,25 @@
   <!-- Hero -->
   <main id="top">
     <section class="hero">
-      <span class="eyebrow">Enfoque · Hábitos · Cumbres</span>
-      <h1 class="hero-title">
-        Alcanza tu <span class="grad">Peak</span>.<br />
-        Mantén tus ojos en la cima.
-      </h1>
-      <p class="hero-sub">
-        Recupera tu concentración, reduce las redes sociales y convierte
-        cada minuto de enfoque en altitud ganada. Una cumbre a la vez.
-      </p>
-      <div class="hero-cta">
-        <a href="#descargar" class="btn btn-primary">Descargar APK</a>
-        <a href="#que-es" class="btn btn-ghost">Cómo funciona</a>
+      <div class="hero-copy">
+        <span class="eyebrow">Enfoque · Hábitos · Cumbres</span>
+        <h1 class="hero-title">
+          Alcanza tu <span class="grad">Peak</span>.<br />
+          Mantén tus ojos en la cima.
+        </h1>
+        <p class="hero-sub">
+          Recupera tu concentración, reduce las redes sociales y convierte
+          cada minuto de enfoque en altitud ganada. Una cumbre a la vez.
+        </p>
+        <div class="hero-cta">
+          <a href="#descargar" class="btn btn-primary">Descargar APK</a>
+          <a href="#que-es" class="btn btn-ghost">Cómo funciona</a>
+        </div>
+        <p class="hero-meta">Android · Gratis · Sin cuenta obligatoria</p>
       </div>
-      <p class="hero-meta">Android · Gratis · Sin cuenta obligatoria</p>
+      <div class="hero-asset" aria-hidden="true">
+        <img src="assets/favicon.png" alt="" class="hero-mountain" />
+      </div>
     </section>
 
     <!-- Qué es -->
@@ -83,32 +88,56 @@
       <h2 class="center" data-reveal>Todo lo que necesitas para subir.</h2>
       <div class="cards">
         <article class="card" data-reveal>
-          <div class="card-icon">⏱</div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="13" r="8" /><path d="M12 13V9" /><path d="M9 2h6" /><path d="m19 5-1.5 1.5" />
+            </svg>
+          </div>
           <h3>Modo Enfoque</h3>
           <p>Sesiones Pomodoro de 25/50 min o personalizadas, con bloqueo de apps mientras subes.</p>
         </article>
         <article class="card" data-reveal>
-          <div class="card-icon">⛰</div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 20 6.5-11 4 6 2-3L21 20Z" /><path d="m8 12 1.5-2.5" />
+            </svg>
+          </div>
           <h3>Cumbres y Altitud</h3>
           <p>Cada minuto de concentración suma altitud. Conquista cumbres y mira crecer tu montaña.</p>
         </article>
         <article class="card" data-reveal>
-          <div class="card-icon">🚫</div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9" /><path d="m5.6 5.6 12.8 12.8" />
+            </svg>
+          </div>
           <h3>Redes bajo control</h3>
           <p>Registra y toma conciencia del tiempo que gastas en apps que te distraen.</p>
         </article>
         <article class="card" data-reveal>
-          <div class="card-icon">📊</div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 20V4" /><path d="M4 20h16" /><path d="M8 20v-6" /><path d="M13 20V9" /><path d="M18 20v-9" />
+            </svg>
+          </div>
           <h3>Estadísticas</h3>
           <p>Gráficos semanales, días de enfoque y tu progreso real, sin adornos.</p>
         </article>
         <article class="card" data-reveal>
-          <div class="card-icon">🎯</div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.5" />
+            </svg>
+          </div>
           <h3>Metas</h3>
           <p>Define objetivos y atribuye tu tiempo de enfoque a lo que de verdad importa.</p>
         </article>
         <article class="card" data-reveal>
-          <div class="card-icon">☁</div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 18a4 4 0 0 1-.5-7.97 5.5 5.5 0 0 1 10.6.97A3.5 3.5 0 0 1 17 18Z" /><path d="M12 13v5" /><path d="m9.5 15.5 2.5-2.5 2.5 2.5" />
+            </svg>
+          </div>
           <h3>Sincronización</h3>
           <p>Inicia sesión opcional para no perder tu progreso entre dispositivos.</p>
         </article>
