@@ -203,11 +203,19 @@ main { position: relative; z-index: 1; }
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
-    padding-top: 64px;
+    padding-top: 56px;
+    gap: 8px;
   }
   .hero-copy { text-align: center; }
-  .hero-asset { order: -1; }          /* montaña arriba en móvil */
-  .hero-mountain { max-width: 240px; }
+  /* Texto primero; la montaña va debajo, asomando bajo el copy */
+  .hero-asset { order: 1; margin-top: 4px; }
+  .hero-mountain {
+    max-width: 300px;
+    /* Desvanecido más marcado desde abajo en móvil */
+    -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 96%);
+    mask-image: linear-gradient(to bottom, #000 45%, transparent 96%);
+    animation: none;            /* sin flotar en móvil, se siente más sobrio */
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-mountain { animation: none; }
