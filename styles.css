@@ -200,21 +200,36 @@ main { position: relative; z-index: 1; }
   50%      { transform: translateY(-12px); }
 }
 @media (max-width: 820px) {
+  /* Texto SOBRE la montaña: ambos comparten la misma celda del grid */
   .hero {
     grid-template-columns: 1fr;
+    grid-template-areas: "stack";
     text-align: center;
-    padding-top: 56px;
-    gap: 8px;
+    align-items: center;
+    min-height: 66vh;
+    padding-top: 48px;
   }
-  .hero-copy { text-align: center; }
-  /* Texto primero; la montaña va debajo, asomando bajo el copy */
-  .hero-asset { order: 1; margin-top: 4px; }
+  .hero-copy {
+    grid-area: stack;
+    text-align: center;
+    position: relative;
+    z-index: 1;             /* el texto va al frente */
+  }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-cta { justify-content: center; }
+  .hero-asset {
+    grid-area: stack;
+    align-self: end;        /* la montaña se ancla abajo, detrás del texto */
+    z-index: 0;
+    pointer-events: none;
+  }
   .hero-mountain {
-    max-width: 300px;
-    /* Desvanecido más marcado desde abajo en móvil */
-    -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 96%);
-    mask-image: linear-gradient(to bottom, #000 45%, transparent 96%);
-    animation: none;            /* sin flotar en móvil, se siente más sobrio */
+    max-width: 380px;
+    opacity: .55;           /* tenue para no competir con el texto */
+    /* Desvanecido desde abajo (y un poco arriba para fundir con el copy) */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 28%, #000 60%, transparent 96%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 28%, #000 60%, transparent 96%);
+    animation: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {
