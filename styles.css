@@ -531,6 +531,13 @@ blockquote {
   margin-bottom: 10px;
 }
 .footer-brand img { width: 26px; height: 26px; border-radius: 7px; }
+.footer-links { margin-top: 8px; font-size: .88rem; }
+.footer-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color .2s var(--ease-out);
+}
+.footer-links a:hover { color: var(--brand); }
 
 @media (max-width: 640px) {
   .nav-links { display: none; }

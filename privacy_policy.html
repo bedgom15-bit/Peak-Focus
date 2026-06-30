@@ -1,81 +1,286 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark" data-lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacidad — Peak Focus</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peak Focus — Política de Privacidad</title>
+  <meta name="description" content="Política de privacidad de Peak Focus: todos tus datos se guardan localmente en tu dispositivo." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    :root { color-scheme: light dark; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.65;
+    /* ===== Página legal — hereda la paleta de styles.css ===== */
+    .legal {
+      position: relative;
+      z-index: 1;
       max-width: 760px;
       margin: 0 auto;
-      padding: 2.5rem 1.25rem 4rem;
-      color: #1a1a1a;
-      background: #ffffff;
+      padding: 56px 24px 90px;
     }
-    @media (prefers-color-scheme: dark) {
-      body { color: #e6e6e6; background: #16181c; }
-      a { color: #7aa2ff; }
-      blockquote { background: #1f2228; }
+    .legal-head { margin-bottom: 40px; }
+    .legal h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -.02em;
+      line-height: 1.1;
     }
-    h1 { font-size: 1.9rem; margin-bottom: .25rem; }
-    h2 { font-size: 1.25rem; margin-top: 2.25rem; border-bottom: 1px solid rgba(127,127,127,.25); padding-bottom: .3rem; }
-    .updated { color: #888; font-size: .9rem; margin-top: 0; }
-    ul { padding-left: 1.25rem; }
-    li { margin: .35rem 0; }
-    a { color: #2257d6; }
-    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
-    footer { margin-top: 3rem; font-size: .85rem; color: #888; }
+    .legal .updated {
+      margin-top: 10px;
+      color: var(--text-dim);
+      font-size: .92rem;
+    }
+    .legal .intro {
+      margin-top: 22px;
+      font-size: 1.12rem;
+      color: var(--text-dim);
+      max-width: 60ch;
+    }
+    .legal h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      font-weight: 800;
+      letter-spacing: -.01em;
+      margin: 44px 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal p { color: var(--text-dim); margin-top: 12px; line-height: 1.7; }
+    .legal ul { margin: 14px 0 0; padding-left: 0; list-style: none; }
+    .legal li {
+      position: relative;
+      padding-left: 26px;
+      margin: 10px 0;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
+    /* Viñeta tipo "cumbre" en color de marca */
+    .legal li::before {
+      content: "▲";
+      position: absolute;
+      left: 0;
+      top: .15em;
+      font-size: .7rem;
+      color: var(--brand);
+    }
+    .legal strong { color: var(--text); }
+    .legal a { color: var(--brand); }
+    .legal .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: color .2s var(--ease-out);
+    }
+    .legal .back:hover { color: var(--brand); }
+    .legal .contact-card {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
   </style>
 </head>
 <body>
-  <h1>Política de Privacidad — Peak Focus</h1>
-  <p class="updated">Última actualización: 29 de junio de 2026</p>
+  <!-- Fondo de montañas (idéntico a la landing) -->
+  <div class="ridges" aria-hidden="true">
+    <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <path class="ridge ridge-far"  d="M0,600 L0,360 L220,200 L420,300 L640,150 L880,290 L1120,170 L1440,310 L1440,600 Z" />
+      <path class="ridge ridge-mid"  d="M0,600 L0,440 L260,300 L520,410 L760,260 L1020,400 L1280,290 L1440,380 L1440,600 Z" />
+      <path class="ridge ridge-near" d="M0,600 L0,520 L320,410 L600,500 L900,380 L1200,490 L1440,440 L1440,600 Z" />
+    </svg>
+  </div>
 
-  <p>Peak Focus ("la app") respeta tu privacidad. Esta política explica qué datos
-  maneja la app y por qué.</p>
+  <!-- Navegación (misma que la landing) -->
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/peak-icon.png" alt="Peak Focus" class="brand-icon" />
+      <span>Peak Focus</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#que-es" data-es="Qué es" data-en="About">Qué es</a>
+      <a href="index.html#features" data-es="Funciones" data-en="Features">Funciones</a>
+      <a href="index.html#descargar" data-es="Descargar" data-en="Download">Descargar</a>
+    </nav>
+    <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma / Switch language">ES</button>
+    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema / Switch theme">
+      <span class="theme-icon-sun">☀</span>
+      <span class="theme-icon-moon">☾</span>
+    </button>
+  </header>
 
-  <h2>Resumen</h2>
-  <ul>
-    <li><strong>Todos tus datos se guardan localmente en tu dispositivo.</strong> La app funciona sin conexión.</li>
-    <li><strong>No recopilamos ni transmitimos datos personales.</strong> No hay cuenta ni inicio de sesión: nada de lo que haces se envía a nuestros servidores.</li>
-    <li><strong>No vendemos ni compartimos tus datos.</strong> No hay anuncios ni analítica de terceros.</li>
-    <li>La sincronización en la nube está <strong>desactivada</strong> en esta versión; tu progreso no sale de tu teléfono.</li>
-  </ul>
+  <main class="legal">
+    <a class="back" href="index.html" data-es-html="&larr; Volver al inicio" data-en-html="&larr; Back to home">&larr; Volver al inicio</a>
 
-  <h2>Qué datos maneja la app (solo en tu dispositivo)</h2>
-  <ul>
-    <li>Sesiones de enfoque, minutos productivos, cumbres/altitud, metas y logros.</li>
-    <li>Tiempo de uso de las aplicaciones que <strong>tú elijas</strong> rastrear.</li>
-    <li>Tu apodo (opcional) y tus preferencias (tema, recordatorios).</li>
-  </ul>
-  <p>Estos datos se almacenan localmente (Hive y preferencias del sistema) y
-  <strong>no se envían a ningún servidor</strong>. Puedes exportarlos tú mismo
-  (Configuración → Respaldo) o borrarlos desinstalando la app.</p>
+    <div class="legal-head">
+      <h1 data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</h1>
+      <p class="updated" data-es="Última actualización: 29 de junio de 2026" data-en="Last updated: June 29, 2026">Última actualización: 29 de junio de 2026</p>
+      <p class="intro"
+         data-es="Peak Focus (“la app”) respeta tu privacidad. Esta política explica qué datos maneja la app y por qué."
+         data-en="Peak Focus (“the app”) respects your privacy. This policy explains what data the app handles and why.">
+        Peak Focus (“la app”) respeta tu privacidad. Esta política explica qué datos maneja la app y por qué.
+      </p>
+    </div>
 
-  <h2>Permisos y por qué los usamos</h2>
-  <ul>
-    <li><strong>Notificaciones:</strong> mostrar recordatorios y avisos de fin de sesión/descanso.</li>
-    <li><strong>Alarmas y recordatorios (alarmas exactas):</strong> para que los recordatorios lleguen a la hora correcta, incluso en reposo.</li>
-    <li><strong>Acceso a datos de uso (Usage Access):</strong> para <strong>medir</strong> cuánto tiempo pasas en las apps que tú eliges rastrear. La app lee solo el <strong>tiempo de uso</strong>, no el contenido de esas apps.</li>
-    <li><strong>Servicio de Accesibilidad:</strong> se usa <strong>únicamente</strong> para detectar qué aplicación está en primer plano y poder <strong>bloquearla</strong> durante tus sesiones de enfoque (si activas el bloqueo). <strong>No</strong> lee, recopila ni almacena el contenido de tu pantalla.</li>
-  </ul>
-  <p>Todos los permisos son opcionales: la app funciona sin concederlos (con menos funciones).</p>
+    <h2 data-es="Resumen" data-en="Summary">Resumen</h2>
+    <ul>
+      <li data-es-html="<strong>Todos tus datos se guardan localmente en tu dispositivo.</strong> La app funciona sin conexión."
+          data-en-html="<strong>All your data is stored locally on your device.</strong> The app works offline.">
+        <strong>Todos tus datos se guardan localmente en tu dispositivo.</strong> La app funciona sin conexión.
+      </li>
+      <li data-es-html="<strong>No recopilamos ni transmitimos datos personales.</strong> No hay cuenta ni inicio de sesión: nada de lo que haces se envía a nuestros servidores."
+          data-en-html="<strong>We do not collect or transmit personal data.</strong> There is no account or sign-in: nothing you do is sent to our servers.">
+        <strong>No recopilamos ni transmitimos datos personales.</strong> No hay cuenta ni inicio de sesión: nada de lo que haces se envía a nuestros servidores.
+      </li>
+      <li data-es-html="<strong>No vendemos ni compartimos tus datos.</strong> No hay anuncios ni analítica de terceros."
+          data-en-html="<strong>We do not sell or share your data.</strong> There are no ads or third-party analytics.">
+        <strong>No vendemos ni compartimos tus datos.</strong> No hay anuncios ni analítica de terceros.
+      </li>
+      <li data-es-html="La sincronización en la nube está <strong>desactivada</strong> en esta versión; tu progreso no sale de tu teléfono."
+          data-en-html="Cloud sync is <strong>disabled</strong> in this version; your progress never leaves your phone.">
+        La sincronización en la nube está <strong>desactivada</strong> en esta versión; tu progreso no sale de tu teléfono.
+      </li>
+    </ul>
 
-  <h2>Eliminación de datos</h2>
-  <p>Desinstalar la app elimina todos los datos almacenados localmente. No conservamos copias en ningún servidor.</p>
+    <h2 data-es="Qué datos maneja la app (solo en tu dispositivo)" data-en="What data the app handles (on your device only)">Qué datos maneja la app (solo en tu dispositivo)</h2>
+    <ul>
+      <li data-es="Sesiones de enfoque, minutos productivos, cumbres/altitud, metas y logros."
+          data-en="Focus sessions, productive minutes, summits/altitude, goals and achievements.">
+        Sesiones de enfoque, minutos productivos, cumbres/altitud, metas y logros.
+      </li>
+      <li data-es-html="Tiempo de uso de las aplicaciones que <strong>tú elijas</strong> rastrear."
+          data-en-html="Usage time of the apps <strong>you choose</strong> to track.">
+        Tiempo de uso de las aplicaciones que <strong>tú elijas</strong> rastrear.
+      </li>
+      <li data-es="Tu apodo (opcional) y tus preferencias (tema, recordatorios)."
+          data-en="Your nickname (optional) and your preferences (theme, reminders).">
+        Tu apodo (opcional) y tus preferencias (tema, recordatorios).
+      </li>
+    </ul>
+    <p data-es-html="Estos datos se almacenan localmente (Hive y preferencias del sistema) y <strong>no se envían a ningún servidor</strong>. Puedes exportarlos tú mismo (Configuración &rarr; Respaldo) o borrarlos desinstalando la app."
+       data-en-html="This data is stored locally (Hive and system preferences) and <strong>is not sent to any server</strong>. You can export it yourself (Settings &rarr; Backup) or delete it by uninstalling the app.">
+      Estos datos se almacenan localmente (Hive y preferencias del sistema) y <strong>no se envían a ningún servidor</strong>. Puedes exportarlos tú mismo (Configuración &rarr; Respaldo) o borrarlos desinstalando la app.
+    </p>
 
-  <h2>Menores de edad</h2>
-  <p>La app no recopila datos personales identificables. Si eres menor de edad, usa la app con el consentimiento de un adulto responsable.</p>
+    <h2 data-es="Permisos y por qué los usamos" data-en="Permissions and why we use them">Permisos y por qué los usamos</h2>
+    <ul>
+      <li data-es-html="<strong>Notificaciones:</strong> mostrar recordatorios y avisos de fin de sesión/descanso."
+          data-en-html="<strong>Notifications:</strong> to show reminders and session/break-end alerts.">
+        <strong>Notificaciones:</strong> mostrar recordatorios y avisos de fin de sesión/descanso.
+      </li>
+      <li data-es-html="<strong>Alarmas y recordatorios (alarmas exactas):</strong> para que los recordatorios lleguen a la hora correcta, incluso en reposo."
+          data-en-html="<strong>Alarms and reminders (exact alarms):</strong> so reminders arrive at the right time, even in standby.">
+        <strong>Alarmas y recordatorios (alarmas exactas):</strong> para que los recordatorios lleguen a la hora correcta, incluso en reposo.
+      </li>
+      <li data-es-html="<strong>Acceso a datos de uso (Usage Access):</strong> para <strong>medir</strong> cuánto tiempo pasas en las apps que tú eliges rastrear. La app lee solo el <strong>tiempo de uso</strong>, no el contenido de esas apps."
+          data-en-html="<strong>Usage Access:</strong> to <strong>measure</strong> how much time you spend on the apps you choose to track. The app reads only <strong>usage time</strong>, not the content of those apps.">
+        <strong>Acceso a datos de uso (Usage Access):</strong> para <strong>medir</strong> cuánto tiempo pasas en las apps que tú eliges rastrear. La app lee solo el <strong>tiempo de uso</strong>, no el contenido de esas apps.
+      </li>
+      <li data-es-html="<strong>Servicio de Accesibilidad:</strong> se usa <strong>únicamente</strong> para detectar qué aplicación está en primer plano y poder <strong>bloquearla</strong> durante tus sesiones de enfoque (si activas el bloqueo). <strong>No</strong> lee, recopila ni almacena el contenido de tu pantalla."
+          data-en-html="<strong>Accessibility Service:</strong> used <strong>solely</strong> to detect which app is in the foreground so it can be <strong>blocked</strong> during your focus sessions (if you enable blocking). It does <strong>not</strong> read, collect or store the content of your screen.">
+        <strong>Servicio de Accesibilidad:</strong> se usa <strong>únicamente</strong> para detectar qué aplicación está en primer plano y poder <strong>bloquearla</strong> durante tus sesiones de enfoque (si activas el bloqueo). <strong>No</strong> lee, recopila ni almacena el contenido de tu pantalla.
+      </li>
+    </ul>
+    <p data-es="Todos los permisos son opcionales: la app funciona sin concederlos (con menos funciones)."
+       data-en="All permissions are optional: the app works without granting them (with fewer features).">
+      Todos los permisos son opcionales: la app funciona sin concederlos (con menos funciones).
+    </p>
 
-  <h2>Cambios</h2>
-  <p>Si esta política cambia (por ejemplo, al añadir inicio de sesión y respaldo en la nube), se actualizará aquí con una nueva fecha.</p>
+    <h2 data-es="Eliminación de datos" data-en="Data deletion">Eliminación de datos</h2>
+    <p data-es="Desinstalar la app elimina todos los datos almacenados localmente. No conservamos copias en ningún servidor."
+       data-en="Uninstalling the app deletes all locally stored data. We keep no copies on any server.">
+      Desinstalar la app elimina todos los datos almacenados localmente. No conservamos copias en ningún servidor.
+    </p>
 
-  <h2>Contacto</h2>
-  <p>Para dudas sobre esta política: <a href="mailto:bedgom15@gmail.com">bedgom15@gmail.com</a></p>
+    <h2 data-es="Menores de edad" data-en="Minors">Menores de edad</h2>
+    <p data-es="La app no recopila datos personales identificables. Si eres menor de edad, usa la app con el consentimiento de un adulto responsable."
+       data-en="The app does not collect personally identifiable data. If you are a minor, use the app with the consent of a responsible adult.">
+      La app no recopila datos personales identificables. Si eres menor de edad, usa la app con el consentimiento de un adulto responsable.
+    </p>
 
-  <footer>© 2026 Peak Focus</footer>
+    <h2 data-es="Cambios" data-en="Changes">Cambios</h2>
+    <p data-es="Si esta política cambia (por ejemplo, al añadir inicio de sesión y respaldo en la nube), se actualizará aquí con una nueva fecha."
+       data-en="If this policy changes (for example, when adding sign-in and cloud backup), it will be updated here with a new date.">
+      Si esta política cambia (por ejemplo, al añadir inicio de sesión y respaldo en la nube), se actualizará aquí con una nueva fecha.
+    </p>
+
+    <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+    <p data-es="Para dudas sobre esta política:" data-en="For questions about this policy:">Para dudas sobre esta política:</p>
+    <div class="contact-card">
+      <img src="assets/peak-icon.png" alt="" width="32" height="32" style="border-radius:8px" />
+      <a href="mailto:bedgom15@gmail.com">bedgom15@gmail.com</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="assets/peak-icon.png" alt="" />
+      <span>Peak Focus</span>
+    </div>
+    <p><span data-es="Alcanza tu Peak." data-en="Reach your Peak.">Alcanza tu Peak.</span> © <span id="year"></span></p>
+  </footer>
+
+  <script>
+    // ===== Tema + idioma (versión autónoma para la página legal) =====
+    (function () {
+      const root = document.documentElement;
+
+      // --- Tema: comparte la misma clave que la landing ---
+      const THEME_KEY = 'peak-theme';
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      if (savedTheme) {
+        root.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        root.setAttribute('data-theme', 'light');
+      }
+      document.getElementById('themeToggle').addEventListener('click', function () {
+        const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem(THEME_KEY, next);
+      });
+
+      // --- Idioma ES/EN: misma clave y mecanismo data-* que la landing ---
+      const LANG_KEY = 'peak-lang';
+      const langToggle = document.getElementById('langToggle');
+
+      function applyLang(lang) {
+        root.setAttribute('data-lang', lang);
+        root.setAttribute('lang', lang);
+        document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+          el.textContent = el.getAttribute('data-' + lang);
+        });
+        document.querySelectorAll('[data-' + lang + '-html]').forEach(function (el) {
+          el.innerHTML = el.getAttribute('data-' + lang + '-html');
+        });
+        langToggle.textContent = lang === 'es' ? 'EN' : 'ES';
+        document.title = lang === 'es'
+          ? 'Peak Focus — Política de Privacidad'
+          : 'Peak Focus — Privacy Policy';
+      }
+
+      const savedLang = localStorage.getItem(LANG_KEY);
+      const browserLang = (navigator.language || 'es').toLowerCase().startsWith('en') ? 'en' : 'es';
+      applyLang(savedLang || browserLang);
+
+      langToggle.addEventListener('click', function () {
+        const next = root.getAttribute('data-lang') === 'es' ? 'en' : 'es';
+        applyLang(next);
+        localStorage.setItem(LANG_KEY, next);
+      });
+
+      // Año del footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
