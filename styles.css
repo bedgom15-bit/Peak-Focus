@@ -144,6 +144,27 @@ h1, h2, h3, .brand span { font-family: 'Outfit', sans-serif; }
 }
 .theme-toggle:hover { transform: rotate(-15deg); border-color: var(--brand); }
 .theme-icon-sun { display: none; }
+
+/* Botón de idioma — mismo lenguaje visual que el de tema */
+.lang-toggle {
+  height: 40px;
+  min-width: 44px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-family: 'Geist', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: .85rem;
+  letter-spacing: .04em;
+  margin-left: auto;   /* mantiene los botones a la derecha aunque se oculte el menú */
+  transition: transform .18s var(--ease-out), border-color .2s var(--ease-out);
+}
+.lang-toggle:hover { border-color: var(--brand); }
+.lang-toggle:active { transform: scale(0.96); }
+
 [data-theme="light"] .theme-icon-sun { display: inline; }
 [data-theme="light"] .theme-icon-moon { display: none; }
 

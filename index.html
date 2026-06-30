@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es" data-theme="dark" data-lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,11 +31,12 @@
       <span>Peak Focus</span>
     </a>
     <nav class="nav-links">
-      <a href="#que-es">Qué es</a>
-      <a href="#features">Funciones</a>
-      <a href="#descargar">Descargar</a>
+      <a href="#que-es" data-es="Qué es" data-en="About">Qué es</a>
+      <a href="#features" data-es="Funciones" data-en="Features">Funciones</a>
+      <a href="#descargar" data-es="Descargar" data-en="Download">Descargar</a>
     </nav>
-    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
+    <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma / Switch language">ES</button>
+    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema / Switch theme">
       <span class="theme-icon-sun">☀</span>
       <span class="theme-icon-moon">☾</span>
     </button>
@@ -45,22 +46,26 @@
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <span class="eyebrow">Enfoque · Hábitos · Cumbres</span>
+        <span class="eyebrow" data-es="Enfoque · Hábitos · Cumbres" data-en="Focus · Habits · Summits">Enfoque · Hábitos · Cumbres</span>
         <div class="hero-headline">
-          <h1 class="hero-title">
+          <h1 class="hero-title"
+              data-es-html='Alcanza tu <span class="grad">Peak</span>.<br />Mantén tus ojos en la cima.'
+              data-en-html='Reach your <span class="grad">Peak</span>.<br />Keep your eyes on the summit.'>
             Alcanza tu <span class="grad">Peak</span>.<br />
             Mantén tus ojos en la cima.
           </h1>
         </div>
-        <p class="hero-sub">
+        <p class="hero-sub"
+           data-es="Recupera tu concentración, reduce las redes sociales y convierte cada minuto de enfoque en altitud ganada. Una cumbre a la vez."
+           data-en="Reclaim your focus, cut down on social media, and turn every minute of focus into altitude gained. One summit at a time.">
           Recupera tu concentración, reduce las redes sociales y convierte
           cada minuto de enfoque en altitud ganada. Una cumbre a la vez.
         </p>
         <div class="hero-cta">
-          <a href="#descargar" class="btn btn-primary">Descargar APK</a>
-          <a href="#que-es" class="btn btn-ghost">Cómo funciona</a>
+          <a href="#descargar" class="btn btn-primary" data-es="Descargar APK" data-en="Download APK">Descargar APK</a>
+          <a href="#que-es" class="btn btn-ghost" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
         </div>
-        <p class="hero-meta">Android · Gratis · Sin cuenta obligatoria</p>
+        <p class="hero-meta" data-es="Android · Gratis · Sin cuenta obligatoria" data-en="Android · Free · No account required">Android · Gratis · Sin cuenta obligatoria</p>
       </div>
       <div class="hero-asset" aria-hidden="true">
         <img src="assets/favicon.png" alt="" class="hero-mountain" />
@@ -70,9 +75,10 @@
     <!-- Qué es -->
     <section id="que-es" class="section">
       <div class="section-head" data-reveal>
-        <span class="kicker">Qué es</span>
-        <h2>Tu base de operaciones para concentrarte.</h2>
-        <p>
+        <span class="kicker" data-es="Qué es" data-en="About">Qué es</span>
+        <h2 data-es="Tu base de operaciones para concentrarte." data-en="Your basecamp for deep focus.">Tu base de operaciones para concentrarte.</h2>
+        <p data-es-html='Peak Focus es una app de enfoque y hábitos diseñada como un ascenso de montaña. En vez de rachas que se rompen, acumulas <strong>altitud</strong>: cada sesión de concentración te eleva, y cada 300 minutos conquistas una nueva <strong>cumbre</strong>. Menos distracciones, más cima.'
+           data-en-html='Peak Focus is a focus and habits app designed like a mountain ascent. Instead of streaks that break, you build <strong>altitude</strong>: every focus session lifts you higher, and every 300 minutes you conquer a new <strong>summit</strong>. Fewer distractions, more summit.'>
           Peak Focus es una app de enfoque y hábitos diseñada como un ascenso
           de montaña. En vez de rachas que se rompen, acumulas <strong>altitud</strong>:
           cada sesión de concentración te eleva, y cada 300 minutos conquistas
@@ -80,14 +86,14 @@
         </p>
       </div>
       <div class="quotes" data-reveal>
-        <blockquote>“El enfoque es el sendero. La cima es la recompensa.”</blockquote>
+        <blockquote data-es="“El enfoque es el sendero. La cima es la recompensa.”" data-en="“Focus is the trail. The summit is the reward.”">“El enfoque es el sendero. La cima es la recompensa.”</blockquote>
       </div>
     </section>
 
     <!-- Features -->
     <section id="features" class="section">
-      <span class="kicker center" data-reveal>Funciones</span>
-      <h2 class="center" data-reveal>Todo lo que necesitas para subir.</h2>
+      <span class="kicker center" data-reveal data-es="Funciones" data-en="Features">Funciones</span>
+      <h2 class="center" data-reveal data-es="Todo lo que necesitas para subir." data-en="Everything you need to climb.">Todo lo que necesitas para subir.</h2>
       <div class="cards">
         <article class="card" data-reveal>
           <div class="card-icon">
@@ -95,8 +101,8 @@
               <circle cx="12" cy="13" r="8" /><path d="M12 13V9" /><path d="M9 2h6" /><path d="m19 5-1.5 1.5" />
             </svg>
           </div>
-          <h3>Modo Enfoque</h3>
-          <p>Sesiones Pomodoro de 25/50 min o personalizadas, con bloqueo de apps mientras subes.</p>
+          <h3 data-es="Modo Enfoque" data-en="Focus Mode">Modo Enfoque</h3>
+          <p data-es="Sesiones Pomodoro de 25/50 min o personalizadas, con bloqueo de apps mientras subes." data-en="Pomodoro sessions of 25/50 min or custom, with app blocking while you climb.">Sesiones Pomodoro de 25/50 min o personalizadas, con bloqueo de apps mientras subes.</p>
         </article>
         <article class="card" data-reveal>
           <div class="card-icon">
@@ -104,8 +110,8 @@
               <path d="m3 20 6.5-11 4 6 2-3L21 20Z" /><path d="m8 12 1.5-2.5" />
             </svg>
           </div>
-          <h3>Cumbres y Altitud</h3>
-          <p>Cada minuto de concentración suma altitud. Conquista cumbres y mira crecer tu montaña.</p>
+          <h3 data-es="Cumbres y Altitud" data-en="Summits & Altitude">Cumbres y Altitud</h3>
+          <p data-es="Cada minuto de concentración suma altitud. Conquista cumbres y mira crecer tu montaña." data-en="Every minute of focus adds altitude. Conquer summits and watch your mountain grow.">Cada minuto de concentración suma altitud. Conquista cumbres y mira crecer tu montaña.</p>
         </article>
         <article class="card" data-reveal>
           <div class="card-icon">
@@ -113,8 +119,8 @@
               <circle cx="12" cy="12" r="9" /><path d="m5.6 5.6 12.8 12.8" />
             </svg>
           </div>
-          <h3>Redes bajo control</h3>
-          <p>Registra y toma conciencia del tiempo que gastas en apps que te distraen.</p>
+          <h3 data-es="Redes bajo control" data-en="Social media in check">Redes bajo control</h3>
+          <p data-es="Registra y toma conciencia del tiempo que gastas en apps que te distraen." data-en="Track and become aware of the time you spend on apps that distract you.">Registra y toma conciencia del tiempo que gastas en apps que te distraen.</p>
         </article>
         <article class="card" data-reveal>
           <div class="card-icon">
@@ -122,8 +128,8 @@
               <path d="M4 20V4" /><path d="M4 20h16" /><path d="M8 20v-6" /><path d="M13 20V9" /><path d="M18 20v-9" />
             </svg>
           </div>
-          <h3>Estadísticas</h3>
-          <p>Gráficos semanales, días de enfoque y tu progreso real, sin adornos.</p>
+          <h3 data-es="Estadísticas" data-en="Statistics">Estadísticas</h3>
+          <p data-es="Gráficos semanales, días de enfoque y tu progreso real, sin adornos." data-en="Weekly charts, focus days and your real progress, no fluff.">Gráficos semanales, días de enfoque y tu progreso real, sin adornos.</p>
         </article>
         <article class="card" data-reveal>
           <div class="card-icon">
@@ -131,8 +137,8 @@
               <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.5" />
             </svg>
           </div>
-          <h3>Metas</h3>
-          <p>Define objetivos y atribuye tu tiempo de enfoque a lo que de verdad importa.</p>
+          <h3 data-es="Metas" data-en="Goals">Metas</h3>
+          <p data-es="Define objetivos y atribuye tu tiempo de enfoque a lo que de verdad importa." data-en="Set objectives and attribute your focus time to what truly matters.">Define objetivos y atribuye tu tiempo de enfoque a lo que de verdad importa.</p>
         </article>
         <article class="card" data-reveal>
           <div class="card-icon">
@@ -140,8 +146,8 @@
               <path d="M7 18a4 4 0 0 1-.5-7.97 5.5 5.5 0 0 1 10.6.97A3.5 3.5 0 0 1 17 18Z" /><path d="M12 13v5" /><path d="m9.5 15.5 2.5-2.5 2.5 2.5" />
             </svg>
           </div>
-          <h3>Sincronización</h3>
-          <p>Inicia sesión opcional para no perder tu progreso entre dispositivos.</p>
+          <h3 data-es="Sincronización" data-en="Sync">Sincronización</h3>
+          <p data-es="Inicia sesión opcional para no perder tu progreso entre dispositivos." data-en="Optional sign-in so you never lose your progress across devices.">Inicia sesión opcional para no perder tu progreso entre dispositivos.</p>
         </article>
       </div>
     </section>
@@ -149,39 +155,41 @@
     <!-- Slogans band -->
     <section class="band">
       <div class="band-track">
-        <span>Alcanza tu peak</span><span aria-hidden="true">•</span>
-        <span>Mantén tus ojos en la cima</span><span aria-hidden="true">•</span>
-        <span>Una cumbre a la vez</span><span aria-hidden="true">•</span>
-        <span>Menos pantalla, más altitud</span><span aria-hidden="true">•</span>
-        <span>Alcanza tu peak</span><span aria-hidden="true">•</span>
-        <span>Mantén tus ojos en la cima</span><span aria-hidden="true">•</span>
-        <span>Una cumbre a la vez</span><span aria-hidden="true">•</span>
-        <span>Menos pantalla, más altitud</span><span aria-hidden="true">•</span>
+        <span data-es="Alcanza tu peak" data-en="Reach your peak">Alcanza tu peak</span><span aria-hidden="true">•</span>
+        <span data-es="Mantén tus ojos en la cima" data-en="Keep your eyes on the summit">Mantén tus ojos en la cima</span><span aria-hidden="true">•</span>
+        <span data-es="Una cumbre a la vez" data-en="One summit at a time">Una cumbre a la vez</span><span aria-hidden="true">•</span>
+        <span data-es="Menos pantalla, más altitud" data-en="Less screen, more altitude">Menos pantalla, más altitud</span><span aria-hidden="true">•</span>
+        <span data-es="Alcanza tu peak" data-en="Reach your peak">Alcanza tu peak</span><span aria-hidden="true">•</span>
+        <span data-es="Mantén tus ojos en la cima" data-en="Keep your eyes on the summit">Mantén tus ojos en la cima</span><span aria-hidden="true">•</span>
+        <span data-es="Una cumbre a la vez" data-en="One summit at a time">Una cumbre a la vez</span><span aria-hidden="true">•</span>
+        <span data-es="Menos pantalla, más altitud" data-en="Less screen, more altitude">Menos pantalla, más altitud</span><span aria-hidden="true">•</span>
       </div>
     </section>
 
     <!-- Descargar -->
     <section id="descargar" class="section download">
-      <span class="kicker center" data-reveal>Descargar</span>
-      <h2 class="center" data-reveal>Empieza tu ascenso hoy.</h2>
-      <p class="center download-sub" data-reveal>
+      <span class="kicker center" data-reveal data-es="Descargar" data-en="Download">Descargar</span>
+      <h2 class="center" data-reveal data-es="Empieza tu ascenso hoy." data-en="Start your ascent today.">Empieza tu ascenso hoy.</h2>
+      <p class="center download-sub" data-reveal
+         data-es="Descarga el APK e instálalo en tu Android. Es gratis y no necesitas crear cuenta."
+         data-en="Download the APK and install it on your Android. It's free and no account needed.">
         Descarga el APK e instálalo en tu Android. Es gratis y no necesitas crear cuenta.
       </p>
       <div class="download-card" data-reveal>
         <img src="assets/peak-icon.png" alt="" class="dl-icon" />
         <div class="dl-info">
           <strong>Peak Focus</strong>
-          <span id="appVersion">Versión 0.2.0 · Android · APK</span>
+          <span id="appVersion" data-es="Versión 0.2.0 · Android · APK" data-en="Version 0.2.0 · Android · APK">Versión 0.2.0 · Android · APK</span>
         </div>
-        <a id="downloadBtn" href="peak-focus.apk" download class="btn btn-primary">Descargar APK</a>
+        <a id="downloadBtn" href="peak-focus.apk" download class="btn btn-primary" data-es="Descargar APK" data-en="Download APK">Descargar APK</a>
       </div>
       <details class="install-help" data-reveal>
-        <summary>¿Cómo instalo un APK?</summary>
+        <summary data-es="¿Cómo instalo un APK?" data-en="How do I install an APK?">¿Cómo instalo un APK?</summary>
         <ol>
-          <li>Toca <strong>Descargar APK</strong> desde tu teléfono Android.</li>
-          <li>Abre el archivo descargado.</li>
-          <li>Si te lo pide, permite <em>“Instalar apps de orígenes desconocidos”</em> para tu navegador.</li>
-          <li>Pulsa <strong>Instalar</strong> y abre Peak Focus. ¡A la cima!</li>
+          <li data-es-html="Toca <strong>Descargar APK</strong> desde tu teléfono Android." data-en-html="Tap <strong>Download APK</strong> from your Android phone.">Toca <strong>Descargar APK</strong> desde tu teléfono Android.</li>
+          <li data-es="Abre el archivo descargado." data-en="Open the downloaded file.">Abre el archivo descargado.</li>
+          <li data-es-html='Si te lo pide, permite <em>“Instalar apps de orígenes desconocidos”</em> para tu navegador.' data-en-html='If prompted, allow <em>“Install unknown apps”</em> for your browser.'>Si te lo pide, permite <em>“Instalar apps de orígenes desconocidos”</em> para tu navegador.</li>
+          <li data-es-html="Pulsa <strong>Instalar</strong> y abre Peak Focus. ¡A la cima!" data-en-html="Tap <strong>Install</strong> and open Peak Focus. To the top!">Pulsa <strong>Instalar</strong> y abre Peak Focus. ¡A la cima!</li>
         </ol>
       </details>
     </section>
@@ -192,7 +200,7 @@
       <img src="assets/peak-icon.png" alt="" />
       <span>Peak Focus</span>
     </div>
-    <p>Alcanza tu Peak. © <span id="year"></span></p>
+    <p><span data-es="Alcanza tu Peak." data-en="Reach your Peak.">Alcanza tu Peak.</span> © <span id="year"></span></p>
   </footer>
 
   <script src="script.js"></script>

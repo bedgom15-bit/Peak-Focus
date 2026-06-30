@@ -19,6 +19,40 @@
     localStorage.setItem(STORAGE_KEY, next);
   });
 
+  // ===== Idioma (ES / EN) =====
+  const LANG_KEY = 'peak-lang';
+  const langToggle = document.getElementById('langToggle');
+
+  function applyLang(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang);
+    // Texto plano
+    document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+    // Texto con marcado (títulos, párrafos con <strong>, etc.)
+    document.querySelectorAll('[data-' + lang + '-html]').forEach(function (el) {
+      el.innerHTML = el.getAttribute('data-' + lang + '-html');
+    });
+    // El botón muestra el idioma al que se cambiará
+    langToggle.textContent = lang === 'es' ? 'EN' : 'ES';
+    // Título de la pestaña
+    document.title = lang === 'es'
+      ? 'Peak Focus — Alcanza tu Peak'
+      : 'Peak Focus — Reach your Peak';
+  }
+
+  // Idioma inicial: guardado > idioma del navegador > español
+  const savedLang = localStorage.getItem(LANG_KEY);
+  const browserLang = (navigator.language || 'es').toLowerCase().startsWith('en') ? 'en' : 'es';
+  applyLang(savedLang || browserLang);
+
+  langToggle.addEventListener('click', function () {
+    const next = root.getAttribute('data-lang') === 'es' ? 'en' : 'es';
+    applyLang(next);
+    localStorage.setItem(LANG_KEY, next);
+  });
+
   // Año del footer
   document.getElementById('year').textContent = new Date().getFullYear();
 
