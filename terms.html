@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peak Focus — Términos y Condiciones</title>
+  <meta name="description" content="Términos y Condiciones de uso de Peak Focus." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ===== Página legal — hereda la paleta de styles.css ===== */
+    .legal {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 90px;
+    }
+    .legal-head { margin-bottom: 40px; }
+    .legal h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+    }
+    .legal .updated {
+      margin-top: 10px;
+      color: var(--text-dim);
+      font-size: .92rem;
+    }
+    .legal .intro {
+      margin-top: 22px;
+      font-size: 1.12rem;
+      color: var(--text-dim);
+      max-width: 60ch;
+    }
+    .legal h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      font-weight: 800;
+      letter-spacing: -.01em;
+      margin: 44px 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal p { color: var(--text-dim); margin-top: 12px; line-height: 1.7; }
+    .legal ul { margin: 14px 0 0; padding-left: 0; list-style: none; }
+    .legal li {
+      position: relative;
+      padding-left: 26px;
+      margin: 10px 0;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
+    /* Viñeta tipo "cumbre" en color de marca */
+    .legal li::before {
+      content: "▲";
+      position: absolute;
+      left: 0;
+      top: .15em;
+      font-size: .7rem;
+      color: var(--brand);
+    }
+    .legal strong { color: var(--text); }
+    .legal a { color: var(--brand); }
+    .legal .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: color .2s var(--ease-out);
+    }
+    .legal .back:hover { color: var(--brand); }
+    /* Aviso destacado (descargo de responsabilidad del bloqueo) */
+    .legal .callout {
+      margin-top: 16px;
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 12px;
+    }
+    .legal .callout p { margin-top: 0; }
+    .legal .contact-card {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fondo de montañas (idéntico a la landing) -->
+  <div class="ridges" aria-hidden="true">
+    <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <path class="ridge ridge-far"  d="M0,600 L0,360 L220,200 L420,300 L640,150 L880,290 L1120,170 L1440,310 L1440,600 Z" />
+      <path class="ridge ridge-mid"  d="M0,600 L0,440 L260,300 L520,410 L760,260 L1020,400 L1280,290 L1440,380 L1440,600 Z" />
+      <path class="ridge ridge-near" d="M0,600 L0,520 L320,410 L600,500 L900,380 L1200,490 L1440,440 L1440,600 Z" />
+    </svg>
+  </div>
+
+  <!-- Navegación (misma que la landing) -->
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/peak-icon.png" alt="Peak Focus" class="brand-icon" />
+      <span>Peak Focus</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#que-es" data-es="Qué es" data-en="About">Qué es</a>
+      <a href="index.html#features" data-es="Funciones" data-en="Features">Funciones</a>
+      <a href="index.html#descargar" data-es="Descargar" data-en="Download">Descargar</a>
+    </nav>
+    <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma / Switch language">ES</button>
+    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema / Switch theme">
+      <span class="theme-icon-sun">☀</span>
+      <span class="theme-icon-moon">☾</span>
+    </button>
+  </header>
+
+  <main class="legal">
+    <a class="back" href="index.html" data-es-html="&larr; Volver al inicio" data-en-html="&larr; Back to home">&larr; Volver al inicio</a>
+
+    <div class="legal-head">
+      <h1 data-es="Términos y Condiciones" data-en="Terms &amp; Conditions">Términos y Condiciones</h1>
+      <p class="updated" data-es="Última actualización: 30 de junio de 2026" data-en="Last updated: June 30, 2026">Última actualización: 30 de junio de 2026</p>
+      <p class="intro"
+         data-es="Estos Términos y Condiciones (“Términos”) rigen el uso de la aplicación Peak Focus (“la app”). Al descargar, instalar o usar la app, aceptas estos Términos. Si no estás de acuerdo, no uses la app."
+         data-en="These Terms &amp; Conditions (“Terms”) govern the use of the Peak Focus application (“the app”). By downloading, installing or using the app, you accept these Terms. If you do not agree, do not use the app.">
+        Estos Términos y Condiciones (“Términos”) rigen el uso de la aplicación Peak Focus (“la app”). Al descargar, instalar o usar la app, aceptas estos Términos. Si no estás de acuerdo, no uses la app.
+      </p>
+    </div>
+
+    <h2 data-es="1. Licencia de uso" data-en="1. License to use">1. Licencia de uso</h2>
+    <p data-es="Se te concede una licencia personal, limitada, no exclusiva, intransferible y revocable para instalar y usar la app en tus dispositivos, únicamente para tu uso personal y no comercial. No adquieres ningún derecho de propiedad sobre la app."
+       data-en="You are granted a personal, limited, non-exclusive, non-transferable and revocable license to install and use the app on your devices, solely for your personal, non-commercial use. You acquire no ownership rights over the app.">
+      Se te concede una licencia personal, limitada, no exclusiva, intransferible y revocable para instalar y usar la app en tus dispositivos, únicamente para tu uso personal y no comercial. No adquieres ningún derecho de propiedad sobre la app.
+    </p>
+
+    <h2 data-es="2. Uso aceptable" data-en="2. Acceptable use">2. Uso aceptable</h2>
+    <p data-es="Te comprometes a no:" data-en="You agree not to:">Te comprometes a no:</p>
+    <ul>
+      <li data-es="Realizar ingeniería inversa, descompilar o intentar extraer el código fuente de la app, salvo en la medida permitida por la ley."
+          data-en="Reverse-engineer, decompile or attempt to extract the source code of the app, except to the extent permitted by law.">
+        Realizar ingeniería inversa, descompilar o intentar extraer el código fuente de la app, salvo en la medida permitida por la ley.
+      </li>
+      <li data-es="Usar la app para fines ilícitos o de forma que dañe, deshabilite o sobrecargue la app o a terceros."
+          data-en="Use the app for unlawful purposes or in a way that damages, disables or overloads the app or third parties.">
+        Usar la app para fines ilícitos o de forma que dañe, deshabilite o sobrecargue la app o a terceros.
+      </li>
+      <li data-es="Redistribuir, vender o sublicenciar la app sin autorización."
+          data-en="Redistribute, sell or sublicense the app without authorization.">
+        Redistribuir, vender o sublicenciar la app sin autorización.
+      </li>
+    </ul>
+
+    <h2 data-es="3. Función de bloqueo de aplicaciones" data-en="3. App-blocking feature">3. Función de bloqueo de aplicaciones</h2>
+    <p data-es="La app ofrece, de forma opcional y activada por ti, una función que bloquea el acceso a otras aplicaciones durante tus sesiones de enfoque. Esta función depende de permisos que tú concedes de forma voluntaria (como el servicio de accesibilidad)."
+       data-en="The app offers, optionally and enabled by you, a feature that blocks access to other applications during your focus sessions. This feature relies on permissions you voluntarily grant (such as the accessibility service).">
+      La app ofrece, de forma opcional y activada por ti, una función que bloquea el acceso a otras aplicaciones durante tus sesiones de enfoque. Esta función depende de permisos que tú concedes de forma voluntaria (como el servicio de accesibilidad).
+    </p>
+    <div class="callout">
+      <p data-es-html="<strong>Importante:</strong> el bloqueo de aplicaciones es una ayuda de productividad, no un sistema de seguridad. Eres el único responsable de decidir qué apps bloquear y durante cuánto tiempo. No uses esta función si podrías necesitar acceso a comunicaciones urgentes o de emergencia. No garantizamos que el bloqueo funcione de forma ininterrumpida en todos los dispositivos, versiones de Android o fabricantes, y no somos responsables de llamadas, mensajes, notificaciones u oportunidades que puedas perder por su uso."
+         data-en-html="<strong>Important:</strong> app blocking is a productivity aid, not a security system. You are solely responsible for deciding which apps to block and for how long. Do not use this feature if you may need access to urgent or emergency communications. We do not guarantee that blocking will work uninterrupted on all devices, Android versions or manufacturers, and we are not responsible for calls, messages, notifications or opportunities you may miss as a result of its use.">
+        <strong>Importante:</strong> el bloqueo de aplicaciones es una ayuda de productividad, no un sistema de seguridad. Eres el único responsable de decidir qué apps bloquear y durante cuánto tiempo. No uses esta función si podrías necesitar acceso a comunicaciones urgentes o de emergencia. No garantizamos que el bloqueo funcione de forma ininterrumpida en todos los dispositivos, versiones de Android o fabricantes, y no somos responsables de llamadas, mensajes, notificaciones u oportunidades que puedas perder por su uso.
+      </p>
+    </div>
+
+    <h2 data-es="4. Tus datos" data-en="4. Your data">4. Tus datos</h2>
+    <p data-es-html="La app guarda tus datos localmente en tu dispositivo. El tratamiento de la información se rige por nuestra <a href=&quot;privacy_policy.html&quot;>Política de Privacidad</a>, que forma parte de estos Términos. Eres responsable de resguardar tus propios datos; desinstalar la app puede eliminarlos de forma permanente."
+       data-en-html="The app stores your data locally on your device. Data handling is governed by our <a href=&quot;privacy_policy.html&quot;>Privacy Policy</a>, which forms part of these Terms. You are responsible for backing up your own data; uninstalling the app may delete it permanently.">
+      La app guarda tus datos localmente en tu dispositivo. El tratamiento de la información se rige por nuestra <a href="privacy_policy.html">Política de Privacidad</a>, que forma parte de estos Términos. Eres responsable de resguardar tus propios datos; desinstalar la app puede eliminarlos de forma permanente.
+    </p>
+
+    <h2 data-es="5. Propiedad intelectual" data-en="5. Intellectual property">5. Propiedad intelectual</h2>
+    <p data-es="La app, su nombre, su diseño, sus gráficos y su código son propiedad del desarrollador o de sus respectivos titulares de licencia, y están protegidos por las leyes de propiedad intelectual. Estos Términos no te transfieren ningún derecho sobre dichos elementos más allá de la licencia de uso descrita."
+       data-en="The app, its name, design, graphics and code are owned by the developer or its respective licensors, and are protected by intellectual property laws. These Terms do not transfer to you any rights over those elements beyond the license to use described here.">
+      La app, su nombre, su diseño, sus gráficos y su código son propiedad del desarrollador o de sus respectivos titulares de licencia, y están protegidos por las leyes de propiedad intelectual. Estos Términos no te transfieren ningún derecho sobre dichos elementos más allá de la licencia de uso descrita.
+    </p>
+
+    <h2 data-es="6. Servicios y contenidos de terceros" data-en="6. Third-party services and content">6. Servicios y contenidos de terceros</h2>
+    <p data-es="La app puede interactuar con tu sistema operativo y con otras aplicaciones instaladas por ti. No controlamos ni respondemos por el comportamiento, disponibilidad o políticas de servicios o aplicaciones de terceros."
+       data-en="The app may interact with your operating system and with other applications installed by you. We do not control and are not responsible for the behavior, availability or policies of third-party services or applications.">
+      La app puede interactuar con tu sistema operativo y con otras aplicaciones instaladas por ti. No controlamos ni respondemos por el comportamiento, disponibilidad o políticas de servicios o aplicaciones de terceros.
+    </p>
+
+    <h2 data-es="7. Descargo de garantías" data-en="7. Disclaimer of warranties">7. Descargo de garantías</h2>
+    <p data-es-html="La app se proporciona <strong>“tal cual” y “según disponibilidad”</strong>, sin garantías de ningún tipo, expresas o implícitas, incluidas —sin limitación— las de comerciabilidad, idoneidad para un fin particular o funcionamiento ininterrumpido o libre de errores. No garantizamos que la app cumpla tus expectativas ni que produzca resultados concretos de productividad."
+       data-en-html="The app is provided <strong>“as is” and “as available”</strong>, without warranties of any kind, express or implied, including —without limitation— those of merchantability, fitness for a particular purpose, or uninterrupted or error-free operation. We do not warrant that the app will meet your expectations or produce specific productivity results.">
+      La app se proporciona <strong>“tal cual” y “según disponibilidad”</strong>, sin garantías de ningún tipo, expresas o implícitas, incluidas —sin limitación— las de comerciabilidad, idoneidad para un fin particular o funcionamiento ininterrumpido o libre de errores. No garantizamos que la app cumpla tus expectativas ni que produzca resultados concretos de productividad.
+    </p>
+
+    <h2 data-es="8. Limitación de responsabilidad" data-en="8. Limitation of liability">8. Limitación de responsabilidad</h2>
+    <p data-es="En la máxima medida permitida por la ley aplicable, el desarrollador no será responsable de daños indirectos, incidentales, especiales, consecuentes o punitivos, ni de pérdida de datos, de productividad, de oportunidades o de beneficios, derivados del uso o la imposibilidad de uso de la app. Como la app se ofrece de forma gratuita, la responsabilidad total del desarrollador se limita, en todo caso, a lo que hayas pagado por la app (es decir, cero) o al monto mínimo permitido por la ley."
+       data-en="To the maximum extent permitted by applicable law, the developer shall not be liable for any indirect, incidental, special, consequential or punitive damages, nor for loss of data, productivity, opportunities or profits, arising from the use of or inability to use the app. As the app is provided free of charge, the developer's total liability is in any case limited to what you paid for the app (i.e. zero) or the minimum amount permitted by law.">
+      En la máxima medida permitida por la ley aplicable, el desarrollador no será responsable de daños indirectos, incidentales, especiales, consecuentes o punitivos, ni de pérdida de datos, de productividad, de oportunidades o de beneficios, derivados del uso o la imposibilidad de uso de la app. Como la app se ofrece de forma gratuita, la responsabilidad total del desarrollador se limita, en todo caso, a lo que hayas pagado por la app (es decir, cero) o al monto mínimo permitido por la ley.
+    </p>
+
+    <h2 data-es="9. Cambios en la app y en los Términos" data-en="9. Changes to the app and Terms">9. Cambios en la app y en los Términos</h2>
+    <p data-es="Podemos modificar, suspender o descontinuar la app (o cualquiera de sus funciones) en cualquier momento. También podemos actualizar estos Términos; la versión vigente se publicará en esta página con su fecha. El uso continuado de la app tras un cambio implica tu aceptación de los Términos actualizados."
+       data-en="We may modify, suspend or discontinue the app (or any of its features) at any time. We may also update these Terms; the current version will be posted on this page with its date. Continued use of the app after a change implies your acceptance of the updated Terms.">
+      Podemos modificar, suspender o descontinuar la app (o cualquiera de sus funciones) en cualquier momento. También podemos actualizar estos Términos; la versión vigente se publicará en esta página con su fecha. El uso continuado de la app tras un cambio implica tu aceptación de los Términos actualizados.
+    </p>
+
+    <h2 data-es="10. Terminación" data-en="10. Termination">10. Terminación</h2>
+    <p data-es="Puedes dejar de usar la app en cualquier momento desinstalándola. Podemos suspender o terminar tu licencia de uso si incumples estos Términos."
+       data-en="You may stop using the app at any time by uninstalling it. We may suspend or terminate your license to use if you breach these Terms.">
+      Puedes dejar de usar la app en cualquier momento desinstalándola. Podemos suspender o terminar tu licencia de uso si incumples estos Términos.
+    </p>
+
+    <h2 data-es="11. Ley aplicable" data-en="11. Governing law">11. Ley aplicable</h2>
+    <p data-es="Estos Términos se rigen por las leyes de los Estados Unidos Mexicanos. Cualquier controversia se someterá a los tribunales competentes de México, sin perjuicio de los derechos que la legislación de protección al consumidor te reconozca en tu lugar de residencia."
+       data-en="These Terms are governed by the laws of the United Mexican States. Any dispute shall be submitted to the competent courts of Mexico, without prejudice to any consumer-protection rights granted to you by the law of your place of residence.">
+      Estos Términos se rigen por las leyes de los Estados Unidos Mexicanos. Cualquier controversia se someterá a los tribunales competentes de México, sin perjuicio de los derechos que la legislación de protección al consumidor te reconozca en tu lugar de residencia.
+    </p>
+
+    <h2 data-es="12. Contacto" data-en="12. Contact">12. Contacto</h2>
+    <p data-es="Para dudas sobre estos Términos:" data-en="For questions about these Terms:">Para dudas sobre estos Términos:</p>
+    <div class="contact-card">
+      <img src="assets/peak-icon.png" alt="" width="32" height="32" style="border-radius:8px" />
+      <a href="mailto:bedgom15@gmail.com">bedgom15@gmail.com</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="assets/peak-icon.png" alt="" />
+      <span>Peak Focus</span>
+    </div>
+    <p><span data-es="Alcanza tu Peak." data-en="Reach your Peak.">Alcanza tu Peak.</span> © <span id="year"></span></p>
+  </footer>
+
+  <script>
+    // ===== Tema + idioma (versión autónoma para la página legal) =====
+    (function () {
+      const root = document.documentElement;
+
+      // --- Tema: comparte la misma clave que la landing ---
+      const THEME_KEY = 'peak-theme';
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      if (savedTheme) {
+        root.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        root.setAttribute('data-theme', 'light');
+      }
+      document.getElementById('themeToggle').addEventListener('click', function () {
+        const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem(THEME_KEY, next);
+      });
+
+      // --- Idioma ES/EN: misma clave y mecanismo data-* que la landing ---
+      const LANG_KEY = 'peak-lang';
+      const langToggle = document.getElementById('langToggle');
+
+      function applyLang(lang) {
+        root.setAttribute('data-lang', lang);
+        root.setAttribute('lang', lang);
+        document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+          el.textContent = el.getAttribute('data-' + lang);
+        });
+        document.querySelectorAll('[data-' + lang + '-html]').forEach(function (el) {
+          el.innerHTML = el.getAttribute('data-' + lang + '-html');
+        });
+        langToggle.textContent = lang === 'es' ? 'EN' : 'ES';
+        document.title = lang === 'es'
+          ? 'Peak Focus — Términos y Condiciones'
+          : 'Peak Focus — Terms & Conditions';
+      }
+
+      const savedLang = localStorage.getItem(LANG_KEY);
+      const browserLang = (navigator.language || 'es').toLowerCase().startsWith('en') ? 'en' : 'es';
+      applyLang(savedLang || browserLang);
+
+      langToggle.addEventListener('click', function () {
+        const next = root.getAttribute('data-lang') === 'es' ? 'en' : 'es';
+        applyLang(next);
+        localStorage.setItem(LANG_KEY, next);
+      });
+
+      // Año del footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
